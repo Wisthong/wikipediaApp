@@ -1,0 +1,15 @@
+<div
+  class="container mx-auto my-10 animate__animated animate__backInRight"
+  *ngFor="let item of listWikipediaResponse?.query?.search"
+>
+  <p class="text-3xl font-bold text-blue-50">{{ item.title }}</p>
+  <p class="font-bold">
+    Definición: <span [innerHTML]="item.snippet" class="font-normal text-justify"> </span>
+  </p>
+  <a
+    class="text-blue-500 no-underline hover:underline hover:text-blue-700 hover:text-2xl"
+    [href]="'https://es.wikipedia.org/?curid' + item.pageid"
+    target="_blank"
+    >Ver mas en Wikipedia</a
+  >
+</div>
